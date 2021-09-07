@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\CarMaker;
+use App\Models\CarModel;
+use App\Models\Car;
 use Illuminate\Database\Seeder;
 use Database\Seeders\CarMakerSeeder;
 use Illuminate\Support\Facades\DB;
@@ -41,12 +43,24 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
+//        Car::truncate();
+//        CarModel::truncate();
+//        CarMaker::truncate();
+
+
         // \App\Models\User::factory(10)->create();
 //        \App\Models\CarMaker::factory()->create();
+
+
         $cm = new CarMakerSeeder();
         $cm->run();
         $this->init();
         $this->refactorParsedArray();
+
+
+        $car = new CarSeeder();
+        $car->run();
+
     }
 
 }

@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->foreignId('maker_id')->references('id')->on('car_makers');
             $table->integer('mileage')->nullable();
             $table->integer('price')->nullable();
+            $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Models\VehicleModel;
 use App\Http\Controllers\HomeController;
@@ -17,5 +18,7 @@ use App\Models\Manufacturer;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/jsonmodels/{maker_id}', [HomeController::class , 'getCarModels']);
+Route::post('/search', [SearchController::class , 'index']);
 
 
