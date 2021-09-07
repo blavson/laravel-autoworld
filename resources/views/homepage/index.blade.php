@@ -6,7 +6,7 @@
             <form method="post" action="search/">
                 @csrf
             <label for="select-maker"></label>
-            <select class="form-select" name="select-maker" id="select_maker">
+            <select class="form-select" name="select_maker" id="select-maker">
                 <option selected>Select Maker</option>
                 @foreach($makers as $maker)
                     <option value="{{ $maker['id'] }}">{{$maker['maker']}}</option>
