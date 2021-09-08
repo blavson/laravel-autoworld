@@ -23,6 +23,19 @@
                     <button class="btn btn-primary mt-3" type="submit">Search</button>
                 </div>
             </form>
+            <div class="auto-magazine mt-5">
+                <img class="img-fluid" src="/images/aw-magazine.jpg" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam commodi laboriosam! At dolorem ducimus inventore pariatur quasi temporibus voluptates.
+                </p>
+            </div>
+
+            <div class="banner-homepage-1 mt-5">
+                <img class="img-fluid" src="/images/banner-homepage-1.jpg" />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam commodi laboriosam! At dolorem ducimus inventore pariatur quasi temporibus voluptates.
+                </p>
+            </div>
         </div>
 
         <div class="col-md-9">
@@ -47,6 +60,16 @@
 {{--                        </ul>--}}
                     </div>
                 @endforeach
+
+                    <nav aria-label="Page navigation example" class="mt-5 align-center">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
             </div>
     </div>
 @endsection

@@ -13,11 +13,10 @@
         </nav>
         @foreach($cars as $car)
             <div class="card mt-4" >
-
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-9">
-                            <h5 class="card-title"> {{$car->maker }} - {{ $car->model_name }}</h5>
+                            <h5 class="card-title"> {{$car->maker }}  {{ $car->model_name }}</h5>
                             <span class="mileage"> Mileage : {{$car->mileage}}</span>
                             <span class="price"> Price : {{ $car->price }}</span>
                             <p class="card-text">

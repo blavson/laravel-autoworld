@@ -17,6 +17,7 @@
         @include('navbar')
         @yield('body')
         @yield('js_bottom')
+        @include('footer')
     </div>
 </body>
 </html>

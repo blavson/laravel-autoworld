@@ -16,7 +16,7 @@ class HomeController extends Controller
         $cars = DB::table('cars')
             ->join('car_models', 'cars.model_id', '=', 'car_models.id')
             ->join('car_makers', 'cars.maker_id', '=', 'car_makers.id')
-            ->select('cars.*', 'car_models.model_name', 'car_makers.maker')->limit(20)
+            ->select('cars.*', 'car_models.model_name', 'car_makers.maker')->limit(10)
             ->orderBy('created_at', 'desc')->get();
 //            ->where('cars.model_id', $model_Id)->where('cars.maker_id', $maker_id)->get();
         $models = CarModel::all();
