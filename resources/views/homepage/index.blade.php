@@ -18,7 +18,10 @@
                     <option value="0">All Models</option>
                 @endforeach
             </select>
-            <button class="btn btn-primary mt-3" type="submit">Search</button>
+
+                <div class="d-grid gap-2 mx-auto mt-2">
+                    <button class="btn btn-primary mt-3" type="submit">Search</button>
+                </div>
             </form>
         </div>
 
@@ -29,7 +32,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9">
-                                    <h5 class="card-title">{{ $c->model->model_name }}</h5>
+                                    <h5 class="card-title">{{$c->maker}}  {{ $c->model_name }}</h5>
                                     <p class="card-text"> {{ $c->description }}</p>
                                 </div>
                                 <div class="col-md-3">
@@ -50,9 +53,11 @@
 
 @section('js_bottom')
     <script>
+        let selectModel = document.querySelector('#select-model')
+        selectModel.innerHTML="<option value='0'>All Models </option>";
         document.querySelector('#select-maker').addEventListener('change', async (event) => {
              let maker_id = event.target.value
-            let models = await fetch("http://localhost:8000/jsonmodels/" + maker_id ,{
+             let models = await fetch("http://localhost:8000/jsonmodels/" + maker_id ,{
                             method : "get",
                             dataType: "json",
                             headers: {
@@ -60,13 +65,12 @@
                             },
                         }).then( response => response.json())
 
-            let selectModel = document.querySelector('#select-model');
             let s ="<option value='0'>All Models </option>"
             for (const [key, value] of Object.entries(models)) {
                 s += `<option value='${key}'>${value}</option>`
             }
              selectModel.innerHTML = s;
-                 } )
+         })
     </script>
 
 @endsection

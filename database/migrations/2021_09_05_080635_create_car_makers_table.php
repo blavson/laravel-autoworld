@@ -17,6 +17,7 @@ class CreateCarMakersTable extends Migration
             $table->id();
             $table->string('maker')->unique();
             $table->string('country')->nullable();
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

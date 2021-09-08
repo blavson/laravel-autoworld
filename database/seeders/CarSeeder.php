@@ -27,7 +27,7 @@ class CarSeeder extends Seeder
     }
 
     public function run()    {
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 7000; $i++) {
             $m = $this->selectModel();
             $this->createModel($m);
         }
