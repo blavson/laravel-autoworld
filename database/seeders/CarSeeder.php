@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Car;
 use App\Models\CarModel;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CarSeeder extends Seeder
 {
@@ -14,8 +15,7 @@ class CarSeeder extends Seeder
      * @return void
      */
     private function selectModel() {
-       $cr = CarModel::get()->random(1)->first();
-       return $cr;
+        return DB::table('car_models')->inRandomOrder()->first();
     }
 
 
@@ -27,7 +27,7 @@ class CarSeeder extends Seeder
     }
 
     public function run()    {
-        for ($i = 0; $i < 7000; $i++) {
+        for ($i = 0; $i < 10000; $i++) {
             $m = $this->selectModel();
             $this->createModel($m);
         }

@@ -19,6 +19,6 @@ use App\Models\Manufacturer;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/jsonmodels/{maker_id}', [HomeController::class , 'getCarModels']);
-Route::post('/search', [SearchController::class , 'index']);
+Route::get('/search', [SearchController::class , 'index']);
 
 

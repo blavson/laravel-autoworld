@@ -3,7 +3,7 @@
     <div class="row">
 
         <div class="col-md-3">
-            <form method="post" action="search/">
+            <form method="get" action="search">
                 @csrf
             <label for="select-maker"></label>
             <select class="form-select" name="select_maker" id="select-maker">
@@ -42,18 +42,19 @@
                 @foreach($cars as $c)
                     <div class="card mt-4" >
 
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <h5 class="card-title">{{$c->maker}}  {{ $c->model_name }}</h5>
-                                    <p class="card-text"> {{ $c->description }}</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <img class="card-img-top" src="https://dummyimage.com/200x200/051d6b/ffffff.jpg&text=car+image" alt="Card image cap">
-                                </div>
-
-                            </div>
-                        </div>
+{{--                        <div class="card-body">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-9">--}}
+{{--                                    <h5 class="card-title">{{$c->maker}}  {{ $c->model_name }}</h5>--}}
+{{--                                    <p class="card-text"> {{ $c->description }}</p>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-3">--}}
+{{--                                    <img class="card-img-top" src="https://dummyimage.com/200x200/051d6b/ffffff.jpg&text=car+image" alt="Card image cap">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        <x-car maker="{{$c->maker}}" model-name="{{$c->model_name}}" description="{{$c->description}}" >dsfdfasdfdsf</x-car>
+{{--                        <x-car maker="$c->maker" model_name={{$c->model_name}} description={{$c->description}} />--}}
 {{--                        <ul class="list-group list-group-flush">--}}
 {{--                            <li class="list-group-item">{{ $c->model->model_name }} </li>--}}
 {{--                            <li class="list-group-item">{{$c->price}}</li>--}}

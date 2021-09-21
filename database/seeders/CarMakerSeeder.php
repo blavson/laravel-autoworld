@@ -129,7 +129,9 @@ private $makers= [
         foreach ($this->makers as $maker) {
                 $cm  =new CarMaker([
                 'maker' => $maker[0],
-                'country' => $maker[1]
+                'country' => $maker[1],
+                 'logo' => null,
+                 'slug' => str_slug($maker[0], '-')
             ]);
                 $cm->save();
         }
