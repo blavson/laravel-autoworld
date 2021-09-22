@@ -53,7 +53,7 @@
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-                        <x-car maker="{{$c->maker}}" model-name="{{$c->model_name}}" description="{{$c->description}}" >dsfdfasdfdsf</x-car>
+                        <x-car maker="{{$c->maker}}" model-name="{{$c->model_name}}" description="{{$c->description}}" />
 {{--                        <x-car maker="$c->maker" model_name={{$c->model_name}} description={{$c->description}} />--}}
 {{--                        <ul class="list-group list-group-flush">--}}
 {{--                            <li class="list-group-item">{{ $c->model->model_name }} </li>--}}
