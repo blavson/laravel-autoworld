@@ -10,15 +10,17 @@ class Car extends Component
     public $maker;
     public $modelName;
     public $description;
+    public $car_id;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($maker, $modelName, $description )     {
+    public function __construct($maker, $modelName, $description, $cid )     {
         $this->maker = $maker;
         $this->modelName = $modelName;
         $this->description= $description;
+        $this->car_id = $cid;
     }
 
     /**

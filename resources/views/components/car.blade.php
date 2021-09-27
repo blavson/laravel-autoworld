@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h5 class="card-title"> </h5>
-                <h2> {{$maker }} {{$modelName}}</h2>
+                <h2> <a href="/car/{{$car_id}}">{{$maker}} {{$modelName}}</a></h2>
                 <p class="card-text"> {{$description }}</p>
             </div>
             <div class="col-md-3">

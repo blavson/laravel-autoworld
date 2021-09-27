@@ -18,10 +18,11 @@ class SearchController extends Controller {
             ->join('car_makers', 'cars.maker_id', '=', 'car_makers.id')
             ->join('car_models', 'cars.model_id', '=', 'car_models.id')
             ->select('cars.*', 'car_models.model_name', 'car_makers.slug' ,'car_makers.maker')
-            ->where('cars.maker_id', $maker_id)->limit(10)->offset(($page_id -1) * 10);
+            ->where('cars.maker_id', $maker_id);
+//            ->limit(10)->offset(($page_id -1) * 10);
          if ($model_id > 0)
             $query->where('cars.model_id', $model_id);
-        $cars = $query->get();
+        $cars = $query->paginate(20)->withQueryString();
 //        dd($cars);
         return view('search/index', ['cars' => $cars, 'model_id'=> $model_id]);
     }

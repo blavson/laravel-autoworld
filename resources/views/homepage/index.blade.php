@@ -53,7 +53,7 @@
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
-                        <x-car maker="{{$c->maker}}" model-name="{{$c->model_name}}" description="{{$c->description}}" />
+                        <x-car maker="{{$c->maker}}"  cid="{{$c->id}}" model-name="{{$c->model_name}}" description="{{$c->description}}" />
 {{--                        <x-car maker="$c->maker" model_name={{$c->model_name}} description={{$c->description}} />--}}
 {{--                        <ul class="list-group list-group-flush">--}}
 {{--                            <li class="list-group-item">{{ $c->model->model_name }} </li>--}}
@@ -62,15 +62,17 @@
                     </div>
                 @endforeach
 
-                    <nav aria-label="Page navigation example" class="mt-5 align-center">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+{{--                    <nav aria-label="Page navigation example" class="mt-5 align-center">--}}
+{{--                        <ul class="pagination">--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">Next</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </nav>--}}
+
+                    {{ $cars->links() }}
             </div>
     </div>
 @endsection

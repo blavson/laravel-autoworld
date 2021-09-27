@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\VehicleModel;
 use App\Http\Controllers\HomeController;
 use App\Models\Manufacturer;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,6 @@ use App\Models\Manufacturer;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/jsonmodels/{maker_id}', [HomeController::class , 'getCarModels']);
 Route::get('/search', [SearchController::class , 'index']);
+Route::get('/car/{id}', [CarController::class, 'show']);
 
 
